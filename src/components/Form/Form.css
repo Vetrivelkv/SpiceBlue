@@ -1,0 +1,20 @@
+.formHead{
+    margin-top: 3%;
+}
+.addUpdateForm{
+    background: aliceblue;
+    border-radius: 5px;
+    padding:10px 10px 10px 10px;
+}
+.formBtn{
+    width: 48%;
+}
+
+.formBody{
+    border: 5px solid aliceblue;
+    padding:30px 20px 30px 20px;
+}
+
+.hover{
+    cursor: pointer;
+}

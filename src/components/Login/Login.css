@@ -1,0 +1,11 @@
+
+.loginContainer{
+    margin-top: 10%;
+}
+.loginForm{
+  background-color: aliceblue;
+  padding: 35px 15px 35px 15px;
+}
+.loginHeader{
+    text-align: center;
+}
