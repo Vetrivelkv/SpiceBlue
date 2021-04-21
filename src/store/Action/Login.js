@@ -4,6 +4,8 @@ import history from '../../history'
 
 export const LoginAction = 'LoginAction';
 
+
+//login API request using redux action
 export const LoginRedux= (params) => async dispatch =>{
         
     await axios.post(`${API.baseUrl}/login`,params)
@@ -31,3 +33,4 @@ export const LoginRedux= (params) => async dispatch =>{
         )
 }
 
+//login API request using redux action

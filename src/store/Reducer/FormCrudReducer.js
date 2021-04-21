@@ -1,8 +1,9 @@
-import {getAll,Create,Update,Delete} from '../Action/FormCrud';
+import {getAll,Create,Update,Delete,getById} from '../Action/FormCrud';
 
 
 const initialstate={
     data:[],
+    singleData:[],
     status:'',
     Update:false,
 };
@@ -13,6 +14,12 @@ const FormCrudReducer =(state=initialstate,action)=>{
             return{
                 ...state,
                 data:action.payload
+            };
+
+            case getById:
+            return{
+                ...state,
+                singleData:action.payload
             };
             case Create:
             return{

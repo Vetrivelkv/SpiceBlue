@@ -5,10 +5,12 @@ export const Delete ='delete';
 export const getAll = 'getAll';
 export const Create = 'Create';
 export const Update = 'Update';
+export const getById="getById"
 
 
+// Redux Action for Deleting Task API Request
 export const deleteData = (id) => async dispatch => {
-    await axios.delete(`${API.baseUrl}/task/lead_04412ba1d622466cab1f0ad941fcf303/${id}`)
+    await axios.delete(`${API.baseUrl}/task/lead_58be137bfde045e7a0c8d107783c4598/${id}`)
         .then(response => response.data)
         .then(
             result => {
@@ -26,10 +28,12 @@ export const deleteData = (id) => async dispatch => {
             }
         );
 };
+//Redux Action for for Deleting Task API Request
 
 
+//Redux Action for Post Task API Request
 export const postData = (data) => async dispatch => {
-    await axios.post(`${API.baseUrl}/task/lead_04412ba1d622466cab1f0ad941fcf303`,data)
+    await axios.post(`${API.baseUrl}/task/lead_58be137bfde045e7a0c8d107783c4598`,data)
         .then(response => response.data)
         .then(
             result => {
@@ -48,9 +52,11 @@ export const postData = (data) => async dispatch => {
             }
         );
 };
-// this module update the ttask
+//Redux Action for Post Task API Request
+
+//Redux Action for Put Task API Request
 export const updateData = (data,id) => async dispatch => {
-    await axios.put(`${API.baseUrl}/task/lead_04412ba1d622466cab1f0ad941fcf303/${id}`,data)
+    await axios.put(`${API.baseUrl}/task/lead_58be137bfde045e7a0c8d107783c4598/${id}`,data)
         .then(response => response.data)
         .then(
             result => {
@@ -68,19 +74,24 @@ export const updateData = (data,id) => async dispatch => {
             }
         );
 };
+//Redux Action for Put Task API Request
 
-// this module handles get all task
 
+//Redux Action for Getting ALL Task API Request
 export const getData= () => async dispatch => {
   
-    await axios.get(`${API.baseUrl}/task/lead_04412ba1d622466cab1f0ad941fcf303`)
+    await axios.get(`${API.baseUrl}/task/lead_58be137bfde045e7a0c8d107783c4598`)
+    
         .then(response => response.data)
         .then(
             result => {
-                dispatch({
-                    type: getAll,
-                    payload: result.results
-                });
+                
+                    dispatch({
+                        type: getAll,
+                        payload: result.results
+                    });  
+                
+                
             },
             err => {
                 dispatch({
@@ -91,3 +102,33 @@ export const getData= () => async dispatch => {
             }
         );
 };
+//Redux Action for Getting ALL Task API Request
+
+
+//Redux Action for Getting a single Task API Request
+export const getDataById= (id) => async dispatch => {
+  
+    await axios.get(`${API.baseUrl}/task/lead_58be137bfde045e7a0c8d107783c4598/${id}`)
+    
+        .then(response => response.data)
+        .then(
+            result => {
+                
+                    dispatch({
+                        type: getById,
+                        payload: result.results
+                    });  
+                
+                
+            },
+            err => {
+                dispatch({
+                    type: getById,
+                    payload: []
+                });
+
+            }
+        );
+};
+
+//Redux Action for Getting a single Task API Request
