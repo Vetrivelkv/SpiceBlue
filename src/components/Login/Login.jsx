@@ -6,20 +6,16 @@ import { LoginRedux } from "../../store/Action/Login";
 
 const Login = () => {
   const dispatch = useDispatch();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("smithcheryl@yahoo.com");
+  const [password, setPassword] = useState("12345678");
 
   //use to login into application
   const Login = (event) => {
-    event.preventDefault();
-    setEmail("smithcheryl@yahoo.com");
-    setPassword("12345678");
-
+    event.preventDefault();    
     const params = {
       email,
       password,
 	};
-	
 	//this dispatch is used to send data to redux action
 	dispatch(LoginRedux(params));
 	//this dispatch is used to send data to redux action
